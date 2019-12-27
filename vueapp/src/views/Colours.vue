@@ -16,6 +16,7 @@
     FormItem(
       v-else
       :items="colours"
+      :styles="styles"
       name="colour"
       save-name="Colours"
       url="/api/set_colours"
@@ -48,6 +49,9 @@ export default {
         .catch(error => console.error(error))
         .finally(() => this.loading = false)
     },
+    styles(item) {
+      return { color: item }
+    }
   },
 }
 </script>

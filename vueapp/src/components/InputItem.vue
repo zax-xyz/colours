@@ -7,6 +7,7 @@
     input.input(
       v-if="isNotNull"
       v-model.trim="items[index]"
+      :style="styles"
       :name="name"
       :placeholder="titleName"
       @focusout="checkDelete"
@@ -22,6 +23,10 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+    styles: {
+      type: Object,
+      required: false,
     },
     index: {
       type: Number,

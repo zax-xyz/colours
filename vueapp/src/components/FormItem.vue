@@ -3,6 +3,7 @@
     .form-body.shadow
       InputItem(
         v-for="(item, index) in itemsData.concat([''])"
+        :styles="styles ? styles(item) : null"
         :name="name"
         :items="itemsData"
         :index="index"
@@ -26,6 +27,10 @@ export default {
     items: {
       type: Array,
       required: true,
+    },
+    styles: {
+      type: Function,
+      required: false,
     },
     name: {
       type: String,
