@@ -1,8 +1,8 @@
 <template lang="pug">
   div
     p
-      | Set your
-      router-link(to="/channels") channels
+      | Set your 
+      router-link(to="/channels") channels 
       | before starting the script!
 
     ButtonGet(
