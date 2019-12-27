@@ -1,0 +1,23 @@
+# python virtual environment
+venv
+
+# python
+__pycache__/
+
+# django
+db.sqlite3
+
+# settings files
+local_settings.py
+prod_settings.py
+
+dump.rdb
+
+# node
+node_modules
+dist
+
+# editor files
+*.code-workspace
+.vscode
+*.swp
