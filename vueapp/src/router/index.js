@@ -46,6 +46,10 @@ const routes = [
     component: Login,
     meta: { title: 'Login' },
   },
+  {
+    path: '*',
+    redirect: '.home',
+  },
 ]
 
 const router = new VueRouter({
