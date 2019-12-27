@@ -58,8 +58,10 @@ export default {
     },
   },
   methods: {
-    updateViewKey() {
-      this.$store.commit('addViewKey');
+    updateViewKey(e) {
+      if (e.currentTarget.classList.contains('router-link-active')) {
+        this.$store.commit('addViewKey');
+      }
     },
   },
 }
