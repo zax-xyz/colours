@@ -26,8 +26,7 @@ export default {
   border-radius 4px
   box-shadow 0 2px 5px rgba(0, 0, 0, .2)
   max-width 800px
-  min-height 250px
-  padding 25px 40px
+  padding 30px 40px
   width 100%
 
 >>> a
