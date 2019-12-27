@@ -1,14 +1,12 @@
-<template>
-  <transition
+<template lang="pug">
+  transition(
     name="fade-slide-up"
     mode="out-in"
     appear
-  >
-    <router-view
+  )
+    router-view#main(
       :key="viewKey"
-      id="main"
-    />
-  </transition>
+    )
 </template>
 
 <script>

@@ -1,22 +1,19 @@
-<template>
-  <form @submit="submit">
-    <div class="form-body shadow">
-      <InputItem
+<template lang="pug">
+  form(@submit="submit")
+    .form-body.shadow
+      InputItem(
         v-for="(item, index) in itemsData.concat([''])"
         :name="name"
         :items="itemsData"
         :index="index"
         :key="index"
-      />
-    </div>
+      )
 
-    <BaseButton
+    BaseButton(
       :class="btnClass"
       type.native="submit"
-    >
-      Save {{ saveName }}
-    </BaseButton>
-  </form>
+    )
+      | Save {{ saveName }}
 </template>
 
 <script>

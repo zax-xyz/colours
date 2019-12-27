@@ -1,11 +1,9 @@
-<template>
-  <BaseButton
-    :text="text"
+<template lang="pug">
+  BaseButton(
     :class="classes"
     @click.native="get"
-  >
-    {{ text }}
-  </BaseButton>
+  )
+    slot
 </template>
 
 <script>
@@ -18,10 +16,6 @@ export default {
   },
   props: {
     url: {
-      type: String,
-      required: true,
-    },
-    text: {
       type: String,
       required: true,
     },

@@ -1,20 +1,17 @@
-<template>
-  <svg
-    class="load-spinner"
+<template lang="pug">
+  svg.load-spinner(
     :width="size"
     :height="size"
     viewBox="0 0 66 66"
-  >
-    <circle
-      class="circle"
+  )
+    circle.circle(
       fill="none"
       stroke-width="6"
       stroke-linecap="round"
       cx="33"
       cy="33"
       r="30"
-    />
-  </svg>
+    )
 </template>
 
 <script>

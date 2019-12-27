@@ -1,36 +1,30 @@
-<template>
-  <div>
-    <h1>Logs</h1>
+<template lang="pug">
+  div
+    h1 Logs
     
-    <LoadSpinner v-if="loading"/>
+    LoadSpinner(v-if="loading")
 
-    <div
+    div.shadow(
       v-else
-      style="overflow-x:auto"
-      class="shadow"
-    >
-      <table>
-        <tr>
-          <th>Channel</th>
-          <th>Message</th>
-          <th>Time</th>
-        </tr>
+      style="overflow-x: auto"
+    )
+      table
+        tr
+          th Channel
+          th Message
+          th Time
 
-        <tr v-for="row in logs" :key="row.pk">
-          <td>{{ row.fields.channel }}</td>
+        tr(
+          v-for="row in logs"
+          :key="row.pk"
+        )
+          td {{ row.fields.channel }}
           
-          <td>
-            /color
-            <span :style="{color: color(row)}">
-              {{ color(row) }}
-            </span>
-          </td>
+          td
+            | /color
+            span(:style="{color: color(row)}") {{ color(row) }}
 
-          <td>{{ formatTime(row.fields.time) }}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+          td {{ formatTime(row.fields.time) }}
 </template>
 
 <script>

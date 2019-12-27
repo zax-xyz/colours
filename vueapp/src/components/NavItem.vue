@@ -1,20 +1,20 @@
-<template>
-  <nav :class="cls">
-    <h3 class="title">Twitch <span class="rainbow-text">Colours</span></h3>
+<template lang="pug">
+  nav(:class="cls")
+    h3.title
+      | Twitch 
+      span.rainbow-text Colours
 
-    <ul>
-      <router-link
+    ul
+      router-link(
         v-for="tab in tabs"
         :to="tab.path"
         :key="tab.path"
         @click.native="updateViewKey"
-      >
-        <li>{{ tab.name }}</li>
-      </router-link>
+      )
+        li {{ tab.name }}
 
-      <a href="/api/logout"><li>Logout</li></a>
-    </ul>
-  </nav>
+      a(href="/api/logout")
+        li Logout
 </template>
 
 <script>

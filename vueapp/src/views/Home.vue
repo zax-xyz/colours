@@ -1,31 +1,36 @@
-<template>
-  <div>
-    <p>Set your <router-link to="/channels">channels</router-link> before starting the script!</p>
+<template lang="pug">
+  div
+    p
+      | Set your
+      router-link(to="/channels") channels
+      | before starting the script!
 
-    <ButtonGet
+    ButtonGet(
       :inactive="startInactive"
       @get-status="getStatus"
       url="/api/start"
-      text="Start Script"
-    />
-    <ButtonGet
+    ) Start Script
+    ButtonGet(
       :inactive="stopInactive"
       @get-status="getStatus"
       url="/api/stop"
-      text="Stop Script"
-    />
+    ) Stop Script
 
-    <p>
-      Status:
-      <LoadSpinner
+    p
+      | Status: 
+      LoadSpinner(
         v-if="loading"
         :size="16"
-      />
-      <span v-else>{{ status }}</span>
-    </p>
+      )
+      span(v-else) {{ status }}
 
-    <p class="info">Please note that after running the script, <strong>it will take 3 messages for you to notice an effect.</strong> Your colour will be changed from the second message (as it only changes colour after every captured message) and <strong><em>the colour changes on your screen are delayed by one message (everyone else sees it one colour ahead)</em></strong> due to Twitch caching the previous message metadata to re-use in subsequent messages.</p>
-  </div>
+    p.info
+      | Please note that after running the script, 
+      strong it will take 3 messages for you to notice an effect. 
+      | Your colour will be changed from the second message (as it only changes colour after every captured message) and 
+      strong
+        em the colour changes on your screen are delayed by one message (everyone else sees it one colour ahead) 
+      | due to Twitch caching the previous message metadata to re-use in subsequent messages.
 </template>
 
 <script>

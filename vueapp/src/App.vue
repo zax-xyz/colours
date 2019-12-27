@@ -1,18 +1,15 @@
-<template>
-  <div
+<template lang="pug">
+  #app(
     v-if="authenticated"
-    id="app"
     key="main-app"
-  >
-    <NavItem/>
-    <HeaderItem/>
-    <MainItem/>
-  </div>
+  )
+    NavItem
+    HeaderItem
+    MainItem
   
-  <div v-else id="login">
-    <LoadSpinner v-if="!loaded"/>
-    <MainItem v-if="loaded"/>
-  </div>
+  #login(v-else )
+    LoadSpinner(v-if="!loaded")
+    MainItem(v-if="loaded")
 </template>
 
 <script>

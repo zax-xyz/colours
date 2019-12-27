@@ -1,23 +1,21 @@
-<template>
-  <div class="container">
-    <div class="left">
-      <img class="logo" src="../assets/rainbow-twitch.png" height="135" width="auto">
-    </div>
+<template lang="pug">
+  .container
+    .left
+      img.logo(
+        src="../assets/rainbow-twitch.png"
+        height="135"
+        width="auto"
+      )
 
-    <div class="right">
-      <LoadSpinner v-if="loading"/>
+    .right
+      LoadSpinner(v-if="loading")
       
-      <BaseButton
+      BaseButton.login(
         v-else
-        class="login"
         @click.native="login"
-      >
-        Login with Twitch
-      </BaseButton>
+      ) Login with Twitch
 
-      <p class="info">You need to sign in with your Twitch account for us to be able to activate and control the script for you</p>
-    </div>
-  </div>
+      p.info You need to sign in with your Twitch account for us to be able to activate and control the script for you
 </template>
 
 <script>

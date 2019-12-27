@@ -1,35 +1,22 @@
-<template>
-  <div>
-    <transition name="fade">
-      <div
-        v-if="navActive"
-        id="darken"
-      />
-    </transition>
+<template lang="pug">
+  div
+    transition(name="fade")
+      #darken(v-if="navActive")
 
-    <header class="header">
-      <div class="flex-left">
-        <a
-          id="sidebarBtn"
-          class="flex-left active"
-          @click="toggleSidebar"
-        >
-          <i class="fa fa-bars"/>
-        </a>
-      </div>
+    header.header
+      .flex-left
+        a#sidebarBtn.flex-left(@click="toggleSidebar")
+          i.fa.fa-bars
 
-      <div class="flex-right">
-        <div class="welcome">
-          Hi, <span class="username">{{ display_name }}</span>!
-        </div>
+      .flex-right
+        .welcome
+          | Hi, 
+          span.username {{ display_name }}
+          | !
 
-        <img
-          class="user-img"
+        img.user-img(
           :src="profile_picture"
-        >
-      </div>
-    </header>
-  </div>
+        )
 </template>
 
 <script>

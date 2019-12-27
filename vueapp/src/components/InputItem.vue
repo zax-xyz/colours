@@ -1,20 +1,18 @@
-<template>
-  <transition
+<template lang="pug">
+  transition(
     name="fade-height"
     mode="in-out"
     appear
-  >
-    <input
+  )
+    input.input(
       v-if="isNotNull"
       v-model.trim="items[index]"
       :name="name"
       :placeholder="titleName"
       @focusout="checkDelete"
-      class="input"
       autocomplete="off"
       spellcheck="false"
-    >
-  </transition>
+    )
 </template>
 
 <script>

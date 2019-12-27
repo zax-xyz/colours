@@ -1,25 +1,23 @@
-<template>
-  <div>
-    <h1>Channels</h1>
+<template lang="pug">
+  div
+    h1 Channels
 
-    <p class="info">
+    p.info.
       Set which channels for the script to run in here.
       <br>
       The script needs a set of channels to run in as it has to listen for messages to know when to change colour.
       <br>
       You may set up to 100 channels.
-    </p>
 
-    <LoadSpinner v-if="loading"/>
+    LoadSpinner(v-if="loading")
 
-    <FormItem
+    FormItem(
       v-else
       :items="channels"
       name="channel"
       save-name="Channels"
       url="/api/set_channels"
-    />
-  </div>
+    )
 </template>
 
 <script>
