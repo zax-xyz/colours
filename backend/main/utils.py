@@ -4,10 +4,12 @@ import colorsys
 
 def is_valid_colour(colour: str):
     preset = [
-        'Red', 'Firebrick', 'Chocolate', 'OrangeRed', 'Coral',
-        'GoldenRod', 'YellowGreen', 'Green', 'SeaGreen', 'SpringGreen',
-        'DodgerBlue', 'Blue', 'BlueViolet', 'HotPink'
+        'red', 'firebrick', 'chocolate', 'orangered', 'coral',
+        'goldenrod', 'yellowgreen', 'green', 'seagreen', 'springgreen',
+        'dodgerblue', 'blue', 'blueviolet', 'hotpink'
     ]
+
+    colour = colour.lower()
     
     if colour in preset or re.search(r'^#(?:[0-9a-fA-F]{3}){1,2}$', colour):
         return True
