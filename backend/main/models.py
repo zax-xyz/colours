@@ -14,7 +14,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     profile_picture = models.TextField(default='')
     colours = models.TextField(default=dumps([
             'Red', 'Firebrick', 'Chocolate', 'OrangeRed', 'Coral',
-            'GoldenRod', 'YellowGreen', 'Green', 'SeaGreen', 'SpringGreen',
+            'GoldenRod', 'YellowGreen', 'SeaGreen', 'Green', 'SpringGreen',
             'DodgerBlue', 'Blue', 'BlueViolet', 'HotPink'
         ]))
 
