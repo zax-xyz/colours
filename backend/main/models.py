@@ -1,10 +1,11 @@
 from json import dumps
 
 from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 
 # Create your models here.
-class User(AbstractBaseUser):
+class User(AbstractBaseUser, PermissionsMixin):
     id = models.IntegerField(default=0, primary_key=True)
     username = models.CharField(max_length=50, unique=True)
     display_name = models.CharField(max_length=50)
@@ -16,6 +17,8 @@ class User(AbstractBaseUser):
             'GoldenRod', 'YellowGreen', 'Green', 'SeaGreen', 'SpringGreen',
             'DodgerBlue', 'Blue', 'BlueViolet', 'HotPink'
         ]))
+
+    is_staff = models.BooleanField(default=False)
 
     def __str__(self):
         return self.username
