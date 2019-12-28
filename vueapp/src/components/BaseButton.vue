@@ -24,7 +24,7 @@ btn-color(background, color = @color)
   display inline-block
   font-size 1em
   font-weight bold
-  margin-inline 5px
+  margin 5px
   padding 8px 18px
   transition background .2s, border-color .2s, color .2s, transform .2s
 
