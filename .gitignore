@@ -22,3 +22,6 @@ dist
 *.code-workspace
 .vscode
 *.swp
+
+# logs
+*.log
