@@ -280,7 +280,7 @@ def get_colours(request):
 @login_required
 @require_POST
 def set_colours(request):
-    colours = unique_everseen(request.POST.getlist('colour'))
+    colours = unique_everseen(request.POST.getlist('items'))
     colours = [c for c in colours if utils.is_valid_colour(c)]
     if len(colours) > 100:
         return JsonResponse({
@@ -289,6 +289,7 @@ def set_colours(request):
         })
 
     request.user.colours = json.dumps(colours)
+    request.user.save()
     
     return JsonResponse({
         'result': 'success',
