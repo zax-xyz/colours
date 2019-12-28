@@ -21,7 +21,7 @@
           td {{ row.fields.channel }}
           
           td
-            | /color
+            | /color 
             span(:style="{color: color(row)}") {{ color(row) }}
 
           td {{ formatTime(row.fields.time) }}
