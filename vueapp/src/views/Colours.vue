@@ -17,6 +17,7 @@
     FormItem(
       v-else
       :items="colours"
+      :styles="styles"
       name="colour"
       save-name="Colours"
       url="/api/set_colours"
