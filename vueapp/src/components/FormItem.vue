@@ -13,8 +13,7 @@
     BaseButton(
       :class="btnClass"
       type.native="submit"
-    )
-      | Save {{ saveName }}
+    ) Save {{ saveName }}
 </template>
 
 <script>
