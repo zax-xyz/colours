@@ -15,7 +15,7 @@
         @click.native="login"
       ) Login with Twitch
 
-      p.info You need to sign in with your Twitch account for us to be able to activate and control the script for you
+      .info You need to sign in with your Twitch account for us to be able to activate and control the script for you
 </template>
 
 <script>

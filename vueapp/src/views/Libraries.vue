@@ -1,7 +1,7 @@
 <template lang="pug">
   div
     h1 Open Source Libraries
-    p.info This website relies the following open source libraries, and their respective dependencies
+    .info This website relies the following open source libraries, and their respective dependencies
 
     div(v-for="library in libraries")
       h3 {{ library.description }}

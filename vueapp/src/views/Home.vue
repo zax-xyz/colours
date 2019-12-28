@@ -24,13 +24,13 @@
       )
       span(v-else) {{ status }}
 
-    p.info
-      | Please note that after running the script, 
-      strong it will take 3 messages for you to notice an effect. 
-      | Your colour will be changed from the second message (as it only changes colour after every captured message) and 
-      strong
-        em the colour changes on your screen are delayed by one message (everyone else sees it one colour ahead) 
-      | due to Twitch caching the previous message metadata to re-use in subsequent messages.
+    .info
+      p Please note that after running the script, 
+        strong it will take 3 messages for you to notice an effect. 
+      p Your colour will be changed from the second message (as it only changes colour after every captured message) and 
+        strong
+          em the colour changes on your screen are delayed by one message (everyone else sees it one colour ahead) 
+        | due to Twitch caching the previous message metadata to re-use in subsequent messages.
 </template>
 
 <script>

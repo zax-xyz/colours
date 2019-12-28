@@ -2,14 +2,15 @@
   div
     h1 Colours
 
-    p.info.
-      Set which colours for the script to use here.
-      <br>
-      The script will cycle through these colours every message, looping back to the beginning when it reaches the end.
-      <br>
-      You can use the preset colours Twitch allows for all users (used by default), or hex colours like #5299e0 if you have Twitch Prime/Turbo.
-      <br>
-      You may set up to 100 colours.
+    .info
+      p Set which colours for the script to use here.
+      p.
+        The script will cycle through these colours every message,
+        looping back to the beginning when it reaches the end.
+      p.
+        You can use the preset colours Twitch allows for all users (used by default),
+        or hex colours like #5299e0 if you have Twitch Prime/Turbo.
+      p You may set up to 100 colours.
 
     LoadSpinner(v-if="loading")
 

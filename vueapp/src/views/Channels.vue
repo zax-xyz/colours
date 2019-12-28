@@ -2,12 +2,10 @@
   div
     h1 Channels
 
-    p.info.
-      Set which channels for the script to run in here.
-      <br>
-      The script needs a set of channels to run in as it has to listen for messages to know when to change colour.
-      <br>
-      You may set up to 100 channels.
+    .info
+      p Set which channels for the script to run in here.
+      p The script needs a set of channels to run in as it has to listen for messages to know when to change colour.
+      p You may set up to 100 channels.
 
     LoadSpinner(v-if="loading")
 

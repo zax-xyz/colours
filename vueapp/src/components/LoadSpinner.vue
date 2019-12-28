@@ -29,6 +29,7 @@ export default {
 <style scoped lang="stylus">
 .load-spinner
   animation rotator 1.4s linear infinite
+  margin auto
 
 @keyframes rotator
   0%

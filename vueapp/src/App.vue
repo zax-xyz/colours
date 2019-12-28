@@ -7,7 +7,7 @@
     HeaderItem
     MainItem
   
-  #login(v-else )
+  #login(v-else)
     LoadSpinner(v-if="!loaded")
     MainItem(v-if="loaded")
 </template>
@@ -75,9 +75,6 @@ export default {
 $max-flex
   display flex
   min-height 100vh
-
-  >>> > *
-    margin auto
 
 #app
   @extend $max-flex

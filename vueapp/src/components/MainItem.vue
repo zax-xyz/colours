@@ -25,6 +25,7 @@ export default {
   background white
   border-radius 4px
   box-shadow 0 2px 5px rgba(0, 0, 0, .2)
+  margin auto
   max-width 800px
   padding 30px 40px
   width 100%
@@ -43,6 +44,10 @@ export default {
 >>> .info
   color #242424
   font-weight lighter
+  margin-block 1em
+
+  p
+    margin 0
 
   strong 
     color black

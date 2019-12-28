@@ -83,5 +83,5 @@ export default {
   border-radius 3px
   display flex
   flex-direction column
-  margin-bottom 20px
+  margin-block-end 20px
 </style>

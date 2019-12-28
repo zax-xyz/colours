@@ -4,11 +4,11 @@
       #darken(v-if="navActive")
 
     header.header
-      .flex-left
+      .flex-start
         a#sidebarBtn.flex-left(@click="toggleSidebar")
           i.fa.fa-bars
 
-      .flex-right
+      .flex-end.flex
         .welcome
           | Hi, 
           span.username {{ display_name }}
@@ -93,13 +93,14 @@ $mobile-display
   @extend $mobile-display
   font-size 1.4em
 
-.flex-left
+.flex
   display flex
-  margin-left 0
 
-.flex-right
-  display flex
-  margin-right 0
+.flex-start
+  margin-block-start 0
+
+.flex-end
+  margin-block-end 0
 
 .welcome
   padding-right 7px
