@@ -34,6 +34,7 @@ btn-color(background, color = @color)
 
   &.inactive
     background white
+    box-shadow 0 1px 5px rgba(0, 0, 0, .15)
     color hsl(210, 30%, 40%)
 
     &:hover
