@@ -19,7 +19,7 @@ btn-color(background, color = @color)
   border 2px solid
   btn-color hsl(210, 70%, 60%), hsl(210, 100%, 98%)
   border-radius 5px
-  box-shadow 0 1px 5px #5299e080
+  box-shadow 0 1px 5px hsla(210, 70%, 60%, .5)
   cursor pointer
   display inline-block
   font-size 1em

@@ -80,6 +80,8 @@ export default {
 .login
   background hsl(260, 70%, 60%)
   border-color @background
+  box-shadow 0 1px 5px hsla(260, 70%, 60%, .5)
+  color hsl(260, 70%, 98%)
   margin 0
   max-width 600px
   width 100%
