@@ -13,25 +13,25 @@ class User(AbstractBaseUser, PermissionsMixin):
     refresh_token = models.CharField(max_length=50)
     profile_picture = models.TextField(default='')
     colours = models.TextField(default=dumps([
-            'Red', 'Firebrick', 'Chocolate', 'OrangeRed', 'Coral',
-            'GoldenRod', 'YellowGreen', 'SeaGreen', 'Green', 'SpringGreen',
-            'DodgerBlue', 'Blue', 'BlueViolet', 'HotPink'
-        ]))
+        'Red', 'Firebrick', 'Chocolate', 'OrangeRed', 'Coral',
+        'GoldenRod', 'YellowGreen', 'SeaGreen', 'Green', 'SpringGreen',
+        'DodgerBlue', 'Blue', 'BlueViolet', 'HotPink'
+    ]))
 
     is_staff = models.BooleanField(default=False)
 
     def __str__(self):
         return self.username
-    
+
     def natural_key(self):
         return self.display_name
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['id', 'username' 'display_name',
+    REQUIRED_FIELDS = ['id', 'username', 'display_name',
                        'access_token', 'refresh_token']
-    
-    
-    
+
+
+
 class CeleryTask(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,
                                 primary_key=True)
@@ -46,11 +46,11 @@ class Channel(models.Model):
 
     def __str__(self):
         return self.username
-    
+
     def natural_key(self):
         return self.display_name
-    
-    
+
+
 class Message(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     channel = models.ForeignKey(Channel, on_delete=models.CASCADE)
