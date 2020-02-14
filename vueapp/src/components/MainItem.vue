@@ -24,7 +24,7 @@ export default {
 #main
   background white
   border-radius 4px
-  box-shadow 0 2px 5px rgba(0, 0, 0, .2)
+  box-shadow 0 2px 10px rgba(0, 0, 0, .1)
   margin auto
   max-width 800px
   padding 30px 40px
@@ -44,7 +44,7 @@ export default {
 >>> .info
   color #242424
   font-weight lighter
-  margin-block 1em
+  margin 1em 0
 
   p
     margin 0
@@ -54,7 +54,7 @@ export default {
     font-weight bolder
 
 >>> .shadow
-  box-shadow 0 0 5px rgba(0, 0, 0, .25)
+  box-shadow 0 1px 5px 2px rgba(0, 0, 0, .14)
 
 {selector('>>>', 'h1, h2, h3, h4, h5, h6')}
   color #3e3e3e

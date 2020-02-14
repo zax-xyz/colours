@@ -82,7 +82,7 @@ export default {
   z-index 2
 
   @media (max-width 768px)
-    box-shadow 0 0 10px 2px rgba(0, 0, 0, .25)
+    box-shadow 0 0 10px rgba(0, 0, 0, .1)
     padding-top 50px
     max-width 500px
     transform translateX(-100%) translateX(-5px)
