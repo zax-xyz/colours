@@ -83,8 +83,13 @@ def verify(request):
     refresh_token = resp.json()['refresh_token']
 
     # Get information about the recently authorised user
-    resp = requests.get('https://api.twitch.tv/helix/users',
-                        headers={"Authorization": f"Bearer {access_token}"})
+    resp = requests.get(
+        'https://api.twitch.tv/helix/users',
+        headers={
+            "Client-ID": settings.TWITCH_CLIENT_ID,
+            "Authorization": f"Bearer {access_token}"
+        }
+    )
     if resp.status_code != 200:
         error(request, 'Error in response from Twitch. Please try again')
         return redirect(index)
@@ -223,7 +228,10 @@ def set_channels(request):
     token = request.user.access_token
     resp = requests.get(
         'https://api.twitch.tv/helix/users',
-        headers={'Authorization': f'Bearer {token}'},
+        headers={
+            "Client-ID": settings.TWITCH_CLIENT_ID,
+            'Authorization': f'Bearer {token}',
+        },
         params={'login': list(channels)}
     )
     if (resp.status_code == 401
