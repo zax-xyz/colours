@@ -31,6 +31,10 @@ export default {
       type: Function,
       required: false,
     },
+    pre: {
+      type: Function,
+      required: false,
+    },
     name: {
       type: String,
       required: true,
@@ -57,7 +61,11 @@ export default {
   methods: {
     submit(e) {
       e.preventDefault();
-      this.$http.post(this.url, {items: this.itemsData.filter(item => item !== null)})
+      const items = this.itemsData
+        .filter(item => item !== null)
+        .map(item => this.pre(item));
+
+      this.$http.post(this.url, {items: items})
         .then(response => {
           this.itemsData = response.data.data;
           this.tempClass('success');
