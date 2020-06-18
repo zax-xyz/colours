@@ -23,15 +23,5 @@ The `backend` django server requires an additional settings file that imports `*
 The Vue app by default proxies `/api/` to `localhost:8000`. If you're running the Django backend on a port other than 8000, you will have to modify the `target` value for `^/api` under `devServer.proxy` in `vueapp/vue.config.js`
 
 ### Production
-- This assumes you are using a web server like Apache or Nginx
-- For production deployment, an optimised version of the Vue app should be built with `npm run build` in `vueapp` and the `dist` contents placed wherever your files are being served
-
-<!-- HTML comment just to tell Markdown that these are 2 separate lists -->
-
-- The Django backend should be run through a ASGI or WSGI server like Gunicorn.
-- This can then be reverse proxied by your web server. For example in Apache,
-```
-ProxyPass /api/ 127.0.0.1:8000
-ProxyPassReverse /api/ 127.0.0.1:8000
-```
-Alternatively, on Apache, you can run it through `mod_wsgi`. Django has documentation on this [here](https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/modwsgi/).
+- An optimised version of the Vue app should be built with `npm run build` in `vueapp` and the `dist` contents placed wherever your files are being served
+- For deploying the backend, see Django's [documentation](https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/) on it.
