@@ -1,7 +1,7 @@
 # Twitch Colours
 Webapp that integrates with Twitch for dynamic username colours
 
-This was my first project to use Vue.js or Django (or celery, or a relational database), so I apologise for it possibly being an incoherent mess in places. Previously I relied on JQuery and Flask for my webapps, though my largest Flask project was pretty much just spaghetti code.
+This was my first project to use Vue.js or Django (or celery, or a relational database), so I apologise for it possibly being an incoherent mess in places. Previously I relied on JQuery and Flask for my webapps, and my largest Flask project was pretty much just spaghetti code.
 
 I currently have this deployed at [colours.zaxu.xyz](https://colours.zaxu.xyz)
 
