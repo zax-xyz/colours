@@ -27,7 +27,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.display_name
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['id', 'username', 'display_name',
+    REQUIRED_FIELDS = ['id', 'display_name',
                        'access_token', 'refresh_token']
 
 
