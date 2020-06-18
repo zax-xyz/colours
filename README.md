@@ -24,4 +24,4 @@ The Vue app by default proxies `/api/` to `localhost:8000`. If you're running th
 
 ### Production
 - An optimised version of the Vue app should be built with `npm run build` in `vueapp` and the `dist` contents placed wherever your files are being served
-- For deploying the backend, see Django's [documentation](https://docs.djangoproject.com/en/3.0/howto/deployment/wsgi/) on it.
+- For deploying the backend, see Django's [documentation](https://docs.djangoproject.com/en/3.0/howto/deployment/) on it.
