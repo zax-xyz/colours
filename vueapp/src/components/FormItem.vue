@@ -34,6 +34,7 @@ export default {
     pre: {
       type: Function,
       required: false,
+      default: i => i,
     },
     name: {
       type: String,
