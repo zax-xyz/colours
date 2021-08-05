@@ -7,16 +7,14 @@ from .models import Channel, Message, User
 
 
 class Bot(commands.Bot):
-
     def __init__(self, irc_token, username, channels):
         self.count = 0
         self.username = username
         self.channels = channels
         self.user = User.objects.get(username=username)
         self.colours = json.loads(self.user.colours)
-        
-        super().__init__(prefix=["c!!"], irc_token=irc_token,
-                         nick=username, initial_channels=channels)
+
+        super().__init__(prefix=["c!!"], token=irc_token, initial_channels=channels)
 
     async def event_ready(self):
         print("Bot ready")
@@ -24,21 +22,21 @@ class Bot(commands.Bot):
         print(f"Channels: {', '.join(self.channels)}")
 
     async def event_message(self, message):
-        username = message.author.name
-        if username != self.username:
+        author = message.author
+        if author is None or author.name != self.username:
             return
 
         colour = self.colours[self.count]
         msg = f"/color {colour}"
         try:
-            await message.channel.colour(colour)
+            await message.channel.send(msg)
         except twitchio.errors.EchoMessageWarning:
             return
 
-        channel = Channel.objects.get(username=message.channel)
+        channel = Channel.objects.get(username=message.channel.name)
         Message.objects.create(user=self.user, channel=channel, content=msg)
         try:
-            last_time = self.user.message_set.all().order_by('-time')[9].time
+            last_time = self.user.message_set.all().order_by("-time")[9].time
         except IndexError:
             pass
         else:
